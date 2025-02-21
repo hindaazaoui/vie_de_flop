@@ -38,3 +38,595 @@ Completed 200 OK in 70ms (Views: 49.9ms | ActiveRecord: 5.3ms (0 queries, 0 cach
 
 
   [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Started GET "/users" for 127.0.0.1 at 2025-02-21 12:38:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (31.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 40.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 83.4ms | GC: 19.5ms)
+Completed 200 OK in 157ms (Views: 38.3ms | ActiveRecord: 49.8ms (1 query, 0 cached) | GC: 20.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:39:14 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 26.6ms | GC: 5.9ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 29.3ms | GC: 7.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | GC: 7.6ms)
+Completed 200 OK in 68ms (Views: 30.7ms | ActiveRecord: 4.9ms (0 queries, 0 cached) | GC: 24.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:39:14 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-02-21 12:39:18 +0100
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"pseudonym" => "", "photo" => ""}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mUser Create (18.7ms)[0m  [1m[32mINSERT INTO "users" ("pseudonym", "photo", "created_at", "updated_at") VALUES ('', '', '2025-02-21 11:39:18.254517', '2025-02-21 11:39:18.254517') RETURNING "id" /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 54ms (ActiveRecord: 23.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 12:39:18 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 25.0ms | ActiveRecord: 5.7ms (1 query, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:39:18 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 11.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 20.1ms | ActiveRecord: 10.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:39:19 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 10.6ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:39:24 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 4.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2025-02-21 12:39:31 +0100
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"pseudonym" => "user1", "photo" => ""}, "commit" => "Update User", "id" => "1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+  [1m[36mUser Update (8.6ms)[0m  [1m[33mUPDATE "users" SET "pseudonym" = 'user1', "updated_at" = '2025-02-21 11:39:31.667620' WHERE "users"."id" = 1 /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 34ms (ActiveRecord: 13.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 12:39:31 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:39:31 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 9.8ms | GC: 1.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 1.8ms)
+Completed 200 OK in 29ms (Views: 11.7ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:40:04 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 4.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:40:12 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 12.4ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 12:40:18 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 12:40:19 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.9ms | GC: 0.3ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.3ms)
+Completed 200 OK in 36ms (Views: 13.1ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:42:33 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 12:42:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/anecdotes"):
+  
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-02-21 12:45:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250221114512_create_anecdotes.rb
+
+
+):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.1) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.1) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.1) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.1) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.10) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.10) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.10) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-02-21 12:47:19 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7424044067129817645) /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='VieDeFlop'*/[0m
+Migrating to CreateAnecdotes (20250221114512)
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN /*application='VieDeFlop'*/[0m
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE TABLE "anecdotes" ("id" bigserial primary key, "title" character varying, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_a601061bf4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='VieDeFlop'*/[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE INDEX "index_anecdotes_on_user_id" ON "anecdotes" ("user_id") /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250221114512') RETURNING "version" /*application='VieDeFlop'*/[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT /*application='VieDeFlop'*/[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7424044067129817645) /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-02-21 12:47:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 52.7ms | GC: 18.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | GC: 20.2ms)
+Completed 200 OK in 139ms (Views: 90.1ms | ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 20.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:47:22 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 12.2ms | GC: 1.6ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.2ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | GC: 1.6ms)
+Completed 200 OK in 23ms (Views: 14.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 12:47:30 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.6ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 5.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 12:47:32 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 35.5ms | GC: 0.0ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 38.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 37.0ms | ActiveRecord: 16.9ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 12:47:32 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 12:47:51 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.8ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 12:47:56 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 8.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:47:56 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 12:48:02 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.3ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-02-21 12:48:04 +0100
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"pseudonym" => "flop", "photo" => ""}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("pseudonym", "photo", "created_at", "updated_at") VALUES ('flop', '', '2025-02-21 11:48:04.698850', '2025-02-21 11:48:04.698850') RETURNING "id" /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 21ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2025-02-21 12:48:04 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 2.4ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2025-02-21 12:48:04 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 9.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2025-02-21 12:48:07 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 12:48:09 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.5ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2025-02-21 12:48:11 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2025-02-21 12:48:11 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.0ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 12:48:34 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 4.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 12:49:42 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 12:49:53 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (1.8ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 12:49:55 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/anecdotes" for 127.0.0.1 at 2025-02-21 12:50:21 +0100
+Processing by AnecdotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "anecdote" => {"title" => "ruby on rails", "content" => "on sait pas dev mais là on est en ligne", "user_id" => "1"}, "commit" => "Create Anecdote"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN /*action='create',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:27:in 'block in AnecdotesController#create'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:27:in 'block in AnecdotesController#create'
+  [1m[36mAnecdote Create (3.6ms)[0m  [1m[32mINSERT INTO "anecdotes" ("title", "content", "user_id", "created_at", "updated_at") VALUES ('ruby on rails', 'on sait pas dev mais là on est en ligne', 1, '2025-02-21 11:50:21.152739', '2025-02-21 11:50:21.152739') RETURNING "id" /*action='create',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:27:in 'block in AnecdotesController#create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT /*action='create',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:27:in 'block in AnecdotesController#create'
+Redirected to http://127.0.0.1:3000/anecdotes/1
+Completed 302 Found in 56ms (ActiveRecord: 14.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/1" for 127.0.0.1 at 2025-02-21 12:50:21 +0100
+Processing by AnecdotesController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mAnecdote Load (0.7ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" WHERE "anecdotes"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:63:in 'AnecdotesController#set_anecdote'
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/show.html.erb within layouts/application
+  Rendered anecdotes/_anecdote.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered anecdotes/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 12:50:34 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 5.2ms | GC: 0.0ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 9.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 12:52:09 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.3ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  Rendered anecdotes/_anecdote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/1" for 127.0.0.1 at 2025-02-21 12:52:34 +0100
+Processing by AnecdotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mAnecdote Load (2.8ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" WHERE "anecdotes"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:63:in 'AnecdotesController#set_anecdote'
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/show.html.erb within layouts/application
+  Rendered anecdotes/_anecdote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered anecdotes/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 3.2ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/1" for 127.0.0.1 at 2025-02-21 12:52:36 +0100
+Processing by AnecdotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mAnecdote Load (1.1ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" WHERE "anecdotes"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:63:in 'AnecdotesController#set_anecdote'
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/show.html.erb within layouts/application
+  Rendered anecdotes/_anecdote.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered anecdotes/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+

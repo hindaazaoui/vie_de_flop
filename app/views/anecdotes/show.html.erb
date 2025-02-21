@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @anecdote %>
+
+<div>
+  <%= link_to "Edit this anecdote", edit_anecdote_path(@anecdote) %> |
+  <%= link_to "Back to anecdotes", anecdotes_path %>
+
+  <%= button_to "Destroy this anecdote", @anecdote, method: :delete %>
+</div>

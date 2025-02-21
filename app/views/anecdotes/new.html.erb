@@ -1,0 +1,11 @@
+<% content_for :title, "New anecdote" %>
+
+<h1>New anecdote</h1>
+
+<%= render "form", anecdote: @anecdote %>
+
+<br>
+
+<div>
+  <%= link_to "Back to anecdotes", anecdotes_path %>
+</div>
