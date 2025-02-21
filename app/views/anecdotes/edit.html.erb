@@ -1,0 +1,12 @@
+<% content_for :title, "Editing anecdote" %>
+
+<h1>Editing anecdote</h1>
+
+<%= render "form", anecdote: @anecdote %>
+
+<br>
+
+<div>
+  <%= link_to "Show this anecdote", @anecdote %> |
+  <%= link_to "Back to anecdotes", anecdotes_path %>
+</div>
