@@ -1,0 +1,39 @@
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='VieDeFlop'*/[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE DATABASE "vie_de_flop_development" ENCODING = 'unicode' /*application='VieDeFlop'*/[0m
+  [1m[35m (49.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='VieDeFlop'*/[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='VieDeFlop'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7424044067129817645) /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-21 10:57:31.554097', '2025-02-21 10:57:31.554100') RETURNING "key" /*application='VieDeFlop'*/[0m
+Migrating to CreateUsers (20250221105730)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='VieDeFlop'*/[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "pseudonym" character varying, "photo" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250221105730') RETURNING "version" /*application='VieDeFlop'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='VieDeFlop'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7424044067129817645) /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-02-21 11:58:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (24.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 32.7ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 80.6ms | GC: 6.7ms)
+Completed 200 OK in 293ms (Views: 74.7ms | ActiveRecord: 36.0ms (1 query, 0 cached) | GC: 53.1ms)
+
+
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-02-21 11:58:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 11:58:43 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 47.4ms | GC: 2.4ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 48.4ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | GC: 2.4ms)
+Completed 200 OK in 70ms (Views: 49.9ms | ActiveRecord: 5.3ms (0 queries, 0 cached) | GC: 2.9ms)
+
+
