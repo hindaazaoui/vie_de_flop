@@ -1166,3 +1166,4 @@ Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 1.0ms (2 queries, 0 cache
 
 
   [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m

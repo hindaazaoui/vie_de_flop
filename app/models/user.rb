@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :anecdote
+  has_many :anecdotes
 
   def to_s
     pseudonym
