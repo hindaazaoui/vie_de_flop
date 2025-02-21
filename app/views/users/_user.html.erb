@@ -6,7 +6,7 @@
 
   <p>
     <strong>Photo:</strong>
-    <%= user.photo %>
+<%= image_tag user.photo if user.photo.present? %>
   </p>
 
 </div>
