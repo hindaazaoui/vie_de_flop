@@ -1473,3 +1473,198 @@ Processing by AnecdotesController#index as HTML
 Completed 200 OK in 108ms (Views: 64.2ms | ActiveRecord: 26.4ms (3 queries, 0 cached) | GC: 14.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-02-21 17:35:42 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (18.6ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 27.1ms | GC: 0.5ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 4.9ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 62.2ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | GC: 2.6ms)
+Completed 200 OK in 83ms (Views: 27.7ms | ActiveRecord: 44.3ms (3 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 17:35:50 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.5ms | GC: 0.5ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.5ms)
+Completed 200 OK in 17ms (Views: 5.5ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 17:35:52 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 17:35:52 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-02-21 17:36:28 +0100
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"pseudonym" => "hind", "photo" => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4AAACKCAMAAAC93lCdAAAAkFBMVEX////TAAHwsLDQAAD1zs7xurrmhYXdVFTyvr742dnfaWn98fHUAAD+9fXonZ3WJCTdXl786+veWVnZMTHUCgrib2/vwMDokJDkfHzpoqL54uL++fn65ub0yMj209PaQ0PXGBjpk5PcTEzuqanjd3f43NzZPz/ni4vYLi7pmZnbTk7WHh7aOzvjgIDusrLVFRWqmyXPAAAMWUlEQVR4nO2daWOqOhCGi7Fu4IJLq+JSt2MtVv//vzsSFkOSIQtQEXm/3HMtxuQxTCYzE3x7q1SpUqVKlSpVqlQpd3Xt+eq9tutdHt2R11DHMpAn49EdeQ2dkIGFlo/uyUtoYQSaPronr6FtyPvRHXkNbW5227Cuo35dcGHX/JP+lFzmx+EwX9iOI7pwN558dP+iR5U89ZCB3M7Ho7vxKvJ9GOSehPfBC6vVS/6745j1y6zXO93U681qrdUCsCubymUUqb5FaAX90Wz3ftdjf5cT03i9P9bm9Mq4D3HPc+70s+rQ8QiNeH+yl42hgZAByYP+s68dCOYby78cVR4KT/Y0IPdJ/2VeG44TUBPQjX5zUw/xmpeO4b2rck94WoZA0YF8ubs7GzKo7/N8fJ6FLXRnfVTh5qsRUu3f177VRGpas8iPIfHVvvJMuHJGAawfO3ih9q3BOiQ+6tmPHU/RVffgom3guGFDkEbIGLxXhiRBU4TcIG/QPbnpYPvE3Wn7sUMqtKxGMB1P1wxgY+DGukr8CFSzMoLtE7eqfXyC6qMsYWPgRmPx6FEVVPY+a9g+8GkFnKPdOA/aFXCu2uucYPvAf6vwCalNjrB94J/VohnKznNqR8BnFXCsS+6sfeDu+6NHWgA5k/yndgi8eRD3p9yaZ+5rJ6rx2hYlI0PCpNXAC93Wo4f8QE3TT+1bC+fJ7NJa4airYy4Oq+VlNz0bQMoNDV/VKTTPKQOt6LqetqDI32E56/DzQbU/HWVRdOing31urIR5hMOl02dmORq+4DZzaaVh7f6uoFVvXl+RJQ/d1fEfTdza/cUIi6T3FKzRpJ7gYRyRYfXPzc3yfs1hQ4XR0eC1XJSefjLS2kSLHZfZPvxSYqWyq2ncjo9FhbTPK3tCv/KrSxtdo+K2eW/k8j5tEF5KV1G1trGWmLKWksg+o3Xc++po0kbnSzChF72tZ5B5bsk6vJhND686xBRH61KumAuvruGb3D8P9GijcejCdfc+Nu4MNcJtDi8bvziS+bkSZjNt39+z7rZSl/bv3VSHr/3jWO/l+27T+LGgKqpu7w4cMVbu2eWE3jUKp5IebdQnK2Sn4atw0MkEC+qdXmRS0KhcBiWskPKG5ju7Qz3ajViz9aDI1Zjp9ep4t+FlOubgbO9wXbxcaq2SyKXdNstj3axpl6fZe2oWlEP3tNgVo9FKt6MhY4ZvnuQ0XfR61QzL7st0UvMSDMrCcBpatI9ss/Xf9HWXrSD5j35KFCSs+0PC9ZYnLdp69llCUSbJLdG5Evu2WiK8F6xp0c4zIbAKkkllOjblNNHe+++Hlk+SM4jP4Est044He3EHHdhG7pGktp/kyM9kPUamVjYBe8WHXJk7nz7v3zw/5M+1FZHlCOEgycId59u1FT4ugQb5fsqfSicLjE7eO+fX/F1jr3dWicp+djq0MWQb/zNvE760ziWKntR1nJK1907nG//7O+9kl1miw1NdnTTwGAMI4odUiKpSkrSWSexwr8Lb4qtEsy9nHXUMdzCdg5iWVSLLmrOWOob7HBprbIcS0giV4jK/NGjfd5Pel5Vr3KRk0irgJpKIe1TaGoUc1NIKTBER6O51G2/RMYX62yEWSF0d2GhDNrGkotESX6A72MmEsNvvu1OD1a7F9fJ79HW/QZnLfEr/QSEhV7/sjpw+BFJNWQ2EaDiyEpuUul8QGgkOPx2mBr/y3nv1XGPfvKWvRcG2n9nESYdf5g2gD1FLaquWlilByRXYsm0iqwcDXwhy1Mg40iapyVwD4TY6UnDq4qoENdyOK0cmLsGOXf4rRCOotxKnVNCYCoFnjNuRidqp4f7UmtwCy6dyxwCxRLmkKerEvvdsccudJlXCvRC3x1FfsF9XMlBoy2lB9pQyWpO8M8Vtj+V6oIJba52MuyUcqa0HaM00cJG3RkPibVnilg3aqeDW2r0blqiCRHH5RfTYbZU3E999lrh/ZD9fAfdI3BxHwq6qejuIerys0j2H7iXkGeKWPryhgFsngyNT8qHuXMaq7hXvuTu57HBLGm5DBbejNKpI4jSwOu4f8u0MtWQhG3yjNm55h00et975G15BYGrc5B1jq5qiyC3NDLcjHyOVxj1XG1XUvvj5fxo7VWJ6K595izybzHArmDNp3BPFUQXC4ZLkB9Jp4L5bhOiklLwyx62w+ZPF3VYelS8vZ2Ya30nxPB3c940qd5VKfFREmLfLDLeCaySLW2uHE1jZG8+kGhsG93VEivtQ02i7wqlURNfGLtSe8+fwUFBmuL/pdhLExc3E81da6+RNnhnx7FDCksngpsKdvIBI5O+wd51fqxWNhDE2KDy9kxluKm73M+uBOnHj3WtrE7/9Fb2tSB65Lv720RoKnYhwc1fDsHsMbjpmwPiv0QTLDDflmCjXgs7R7YbY7u5zXKtqyghmWjuo5BkCnybEzatrCV1BFjddUjGkL8gbt3IBpG/xkNUJf45Jp44HN+HdO4ExiN/khMS42cU0sggsbjpEc6QvKBpu896BPr41tS235d0gnaAtaDcvxm0yDUenE8S4G/QFRcNN2Eo/76VrubED0Q16g6CPE+N+Y0r3o9qJ58ftEIPDu5SD9sNKvE+eB+/+hj5PAjdjzCJHp4C4FZfKd2JyY1vCcV7l5N/yweFL8EuXwM2SCf2PIuCm7r3pmxOTADe5lHt9VwnfU/33vUz84CRwpZTBzUTao21lEXBTrv21H9P3dtL4gFMsc/pjtA6rYo0Dp+zQRwnbVzFuh9mpK3gm+eMW3v0IGRPoJ+CIcmJ8psPRf2DdOeI1RIw/rICbE3ILSzyLgFsqM42G/Bk+uz9XHscq37Unt9EkuwQW+olxczKBYd+LgFvWTwae/VGf+MR9A6m7xblpTzS6BMsfhLg5Wbtr+Lci4JYtdgILbrrvQwMZV29Cam9x2ByuJu4dp+lo/EXALR3wTgCy6J1xUba2FyiTFebj/p6QanLGcj/yXgjc0r5bEhHsMWomhH3JnZ7USS9EzmwhcMs7b66gokzrIRqh5IqZNXDfF4Vi4H77J9lx0XlpvVIeX8L6KV3cxEmqIkQEbzKlT5omHgvQD5fcdJU7GqyMmyxbY7M5zWFMA3rC5IL7bS5Z/JBcCKJzhDJSX4q2Ou4xMYHVU9b54H4zmcMQfI2S5mCqR6CDMcB0uBGZZi4M7jdnI/fxCRZWN2nm6ww3nAJ3fLUpDu6b7zyQ+EFllFCTkMLpNoh6pSxxU2t7kXDfHPDTiKl7oD8EjIwGOXRt8Q4apMVNLzXFwn2TuVp+kFrS5WfwGd50toSMUGWEG33TYZ7C4WZExwv34JW/ymOJKWtjgiz2h/yKj5sOqIAPvXbS2ZJsl0pkDHYcH6pEuNvpbIkxkuuPHG7gKGyJcKfa4xgZ4/7i735LhDtNvMQT3uaIf+pJ0naPubzLg1v1GAYjjLthdD6yOaRt8Xj/EW6ny5cEbjo4C+FOFXv1hGMmPWQgdwrloVVwc3n/De5xHxBOwHZ/toHWgf4RouMgUNVPui3lTa43q2d+2tPdgMFvBneTl8DxxOH9N7hBYdzy0VfDgA9Rp/nNOCyc6wzvEYQgk8LJVULH+Vnej8U91sAN5IfnaW2J//S6CCZ4Bo2D24FWaWa9fD7cwF0uf7AflNdylMkHn2DOy8R3Qd5UdRDnsIjgh3MfjPsLuMk7Cm0A8hZIM8INZf25hQ8mtKOlMnJs8uzDtEmZG/qCx+KGQibpflzVk5/mj/4XeqATv87EhrJR4xhvFjdts2ZU84/FDT3bWfOUcKxp3P0IG/QAMKCsx7xC7ZL2hMVN+5zFwg1FSfUeXhKTH0mPRgW5JlAVlQ2N4ovg/Wy4IXdY67FTlLCdOoW/RwbdR2DR2hwahnvn/Vy44eeD0ufjdOQf7VuczkSFpwLutwM0jmtUTvtUuMGzjrDnq6Iov9BueD8qCQR6EkoyQa/6y4SuKDBu7mPLfIE3sopcwon4GEBrZVIF7ApqOuT9RLgRnDZLU2dMKLYH7Nb4FfWJBcd1qOm+/Vy4UT/ph6roTmpJruI4ub4b9JB83k+CG103iVHofdJTIqQlfjLSm3cahVLcN21BjeP9Tpt5mcbdoy8IcW+Zt0a4ZeWfWTETH6lxkztpCZ6JvaxlIanZvdhR76KKG+pA4zuvdZN5lR5Ym74i9CJbzFuDv9h0h2DhKetcki55r5t5/2pNpUqVKlWqVKlSOv0HCAjk5l2g+YIAAAAASUVORK5CYII="}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mUser Create (6.1ms)[0m  [1m[32mINSERT INTO "users" ("pseudonym", "photo", "created_at", "updated_at") VALUES ('hind', 'data:image/png;base64,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', '2025-02-21 16:36:28.213949', '2025-02-21 16:36:28.213949') RETURNING "id" /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*action='create',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:27:in 'block in UsersController#create'
+Redirected to http://127.0.0.1:3000/users/3
+Completed 302 Found in 23ms (ActiveRecord: 8.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2025-02-21 17:36:28 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2025-02-21 17:36:38 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 17:36:40 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 5.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 17:36:40 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 5.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2025-02-21 17:36:43 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 2.4ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 17:37:02 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2025-02-21 17:37:04 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='edit',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 4.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2025-02-21 17:37:19 +0100
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"pseudonym" => "elephant du back", "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"}, "commit" => "Update User", "id" => "1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+  [1m[36mUser Update (3.8ms)[0m  [1m[33mUPDATE "users" SET "pseudonym" = 'elephant du back', "photo" = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png', "updated_at" = '2025-02-21 16:37:19.894995' WHERE "users"."id" = 1 /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT /*action='update',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:40:in 'block in UsersController#update'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 28ms (ActiveRecord: 10.5ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 17:37:19 +0100
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 2.5ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-02-21 17:37:24 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/_user.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 11.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.0ms)
+Completed 200 OK in 52ms (Views: 13.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
