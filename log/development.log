@@ -992,3 +992,177 @@ Processing by AnecdotesController#index as HTML
 Completed 200 OK in 72ms (Views: 27.6ms | ActiveRecord: 29.0ms (2 queries, 0 cached) | GC: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-02-21 15:37:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (71.8ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (24.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 224.3ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 380.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 400.1ms | GC: 0.0ms)
+Completed 200 OK in 631ms (Views: 193.9ms | ActiveRecord: 230.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-02-21 15:37:20 +0100
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-02-21 15:37:21 +0100
+Started GET "/assets/turbo.min-fae85750.js" for 127.0.0.1 at 2025-02-21 15:37:21 +0100
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-02-21 15:37:21 +0100
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-02-21 15:37:21 +0100
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-02-21 15:37:21 +0100
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 15:40:28 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/1" for 127.0.0.1 at 2025-02-21 15:40:28 +0100
+Processing by AnecdotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mAnecdote Load (0.9ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" WHERE "anecdotes"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:63:in 'AnecdotesController#set_anecdote'
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered anecdotes/show.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 4.9ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 16.2ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 15:40:29 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 41.5ms | GC: 4.4ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 42.7ms | GC: 4.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | GC: 4.4ms)
+Completed 200 OK in 56ms (Views: 43.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 5.4ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 15:40:29 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 6.1ms | GC: 0.9ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 6.8ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.9ms)
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 15:40:32 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.3ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 11.9ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 17.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 15.2ms | ActiveRecord: 6.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/" for 127.0.0.1 at 2025-02-21 15:42:27 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.5ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2025-02-21 15:42:28 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in 'UsersController#set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 2.5ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anec" for 127.0.0.1 at 2025-02-21 15:42:34 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/anec"):
+  
+Started GET "/anecdotes/1" for 127.0.0.1 at 2025-02-21 15:42:39 +0100
+Processing by AnecdotesController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mAnecdote Load (6.9ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" WHERE "anecdotes"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/controllers/anecdotes_controller.rb:63:in 'AnecdotesController#set_anecdote'
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 4.4ms | GC: 0.0ms)
+  Rendered anecdotes/show.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 8.0ms | ActiveRecord: 8.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes/new" for 127.0.0.1 at 2025-02-21 15:45:53 +0100
+Processing by AnecdotesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='new',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_form.html.erb:9
+  Rendered anecdotes/_form.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered anecdotes/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 15:47:27 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.5ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/anecdotes" for 127.0.0.1 at 2025-02-21 15:48:35 +0100
+Processing by AnecdotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering anecdotes/index.html.erb within layouts/application
+  [1m[36mAnecdote Load (0.4ms)[0m  [1m[34mSELECT "anecdotes".* FROM "anecdotes" /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/index.html.erb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='VieDeFlop',controller='anecdotes'*/[0m
+  ↳ app/views/anecdotes/_anecdote.html.erb:14
+  Rendered anecdotes/_anecdote.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered anecdotes/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='VieDeFlop'*/[0m
